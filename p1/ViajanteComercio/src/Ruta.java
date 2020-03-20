@@ -1,3 +1,29 @@
-public class Ruta {
+import java.util.ArrayList;
 
+public class Ruta {
+    private ArrayList<Ciudad> ciudades;
+    private double coste;
+
+    public Ruta(){
+        ciudades = new ArrayList<>();
+        coste = 0;
+    }
+
+    public void agregarCiudad(Ciudad ciudad, double distancia){
+        ciudades.add(ciudad);
+        coste += distancia;
+    }
+
+    public double getCoste() {
+        return coste;
+    }
+
+    public ArrayList<Ciudad> getCiudades() {
+        return ciudades;
+    }
+
+    @Override
+    public String toString() {
+        return "Ruta{}";
+    }
 }

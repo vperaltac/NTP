@@ -38,7 +38,6 @@ public class Problema {
                 }
                 System.out.println();
             }
-
         } catch (FileNotFoundException e){
             System.out.println("Archivo no encontrado.");
             e.printStackTrace();
@@ -71,5 +70,17 @@ public class Problema {
         double b = (y2-y1)*(y2-y1);
 
         return Math.sqrt(a+b);
+    }
+
+    public int getDimension() {
+        return dimension;
+    }
+
+    public ArrayList<Ciudad> getCiudades() {
+        return ciudades;
+    }
+
+    public Vector<Vector<Double>> getDistancias() {
+        return distancias;
     }
 }

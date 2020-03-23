@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Vector;
 
 public class Ruta {
     private ArrayList<Ciudad> ciudades;
@@ -24,6 +25,10 @@ public class Ruta {
 
     @Override
     public String toString() {
-        return "Ruta{}";
+        String info = "Ruta: ";
+        for(Ciudad c : ciudades){
+            info += c.getLabel() + " ";
+        }
+        return info;
     }
 }

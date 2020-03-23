@@ -32,12 +32,6 @@ public class Problema {
 
             inicializarMatriz();
 
-            for(Vector<Double> v : distancias){
-                for(Double d : v){
-                    System.out.print(d + " ");
-                }
-                System.out.println();
-            }
         } catch (FileNotFoundException e){
             System.out.println("Archivo no encontrado.");
             e.printStackTrace();

@@ -1,22 +1,21 @@
 import java.util.ArrayList;
-import java.util.Vector;
 
 public class Ruta {
     private ArrayList<Ciudad> ciudades;
-    private double coste;
+    private double distancia;
 
     public Ruta(){
         ciudades = new ArrayList<>();
-        coste = 0;
+        distancia = 0;
     }
 
-    public void agregarCiudad(Ciudad ciudad, double distancia){
+    public void agregarCiudad(Ciudad ciudad, double dist){
         ciudades.add(ciudad);
-        coste += distancia;
+        distancia += dist;
     }
 
-    public double getCoste() {
-        return coste;
+    public double getDistancia() {
+        return distancia;
     }
 
     public ArrayList<Ciudad> getCiudades() {

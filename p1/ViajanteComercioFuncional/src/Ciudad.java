@@ -1,3 +1,9 @@
+import java.util.Collection;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
 /**
  * Clase basica para representar una ubicacion en el problema
  * del TSP
@@ -27,6 +33,19 @@ public class Ciudad {
         y = coory;
     }
 
+    public Ciudad(String linea){
+        // Se define el patron para las comas que hacen de separadores
+        Pattern pattern = Pattern.compile("\\s+");
+
+        // Se procesa la linea
+        List<String> infos = pattern.splitAsStream(linea)
+                .collect(Collectors.toList());
+
+        etiqueta = infos.get(0);
+        x = Double.parseDouble(infos.get(1));
+        y = Double.parseDouble(infos.get(2));
+    }
+
     /**
      * Obtiene la coordenada X
      *
@@ -52,5 +71,14 @@ public class Ciudad {
      */
     public String getLabel() {
         return etiqueta;
+    }
+
+    @Override
+    public String toString() {
+        return "Ciudad{" +
+                "etiqueta='" + etiqueta + '\'' +
+                ", x=" + x +
+                ", y=" + y +
+                '}';
     }
 }

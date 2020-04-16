@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 import java.util.stream.Collectors;
 
 public class Ruta {
@@ -11,8 +12,9 @@ public class Ruta {
         distancia = 0;
     }
 
-    public void agregarCiudad(Ciudad ciudad){
+    public void agregarCiudad(Ciudad ciudad, double distancia){
         ciudades.add(ciudad);
+        this.distancia += distancia;
     }
 
     public double getDistancia(){

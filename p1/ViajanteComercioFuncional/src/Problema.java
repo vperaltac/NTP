@@ -19,7 +19,8 @@ public class Problema {
             // Se seleccionan sólo las lineas que no contengan la palabra DIMENSION y que tengan algún dígito
             ciudades = lineas
                     .filter(s -> s.matches(".*[^(DIMENSION:)] \\d.*"))
-                    .map(Ciudad::new).collect(Collectors.toList());
+                    .map(Ciudad::new)
+                    .collect(Collectors.toList());
 
             inicializarMatriz();
         } catch(IOException e){

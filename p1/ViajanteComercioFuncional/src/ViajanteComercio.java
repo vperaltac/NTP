@@ -6,5 +6,6 @@ public class ViajanteComercio {
 
         VecinoMasCercano vmc = new VecinoMasCercano();
         Ruta ruta = vmc.calcularRutaOptima(problema);
+        System.out.println("Ruta VecinoMasCercano: " + ruta);
     }
 }

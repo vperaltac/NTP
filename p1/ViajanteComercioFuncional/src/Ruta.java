@@ -33,6 +33,12 @@ public class Ruta {
 
     @Override
     public String toString() {
-        return ciudades.toString();
+        String info = "Ruta: ";
+        for(Ciudad c : ciudades){
+            info += c.getLabel() + " ";
+        }
+        info += "\nDistancia: " + distancia;
+
+        return info;
     }
 }

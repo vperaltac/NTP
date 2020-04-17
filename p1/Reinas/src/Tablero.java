@@ -6,7 +6,12 @@ public class Tablero {
 
     public Tablero(int dimension){
         this.dimension = dimension;
-        contenido = new ArrayList<Celda>();
+        contenido = new ArrayList<>();
+    }
+
+    public Tablero(Tablero otro){
+        this.dimension = otro.dimension;
+        this.contenido = new ArrayList<>(otro.contenido);
     }
 
     public void ponerReina(int fila, int columna){

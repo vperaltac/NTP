@@ -1,10 +1,14 @@
+import java.util.ArrayList;
+
 public class Reinas {
     public static void main(String[] args) {
-        Tablero tablero = new Tablero(3);
-        tablero.ponerReina(0,1);
-        tablero.ponerReina(0,0);
-        tablero.ponerReina(2,2);
+        Buscador b = new Buscador(8);
+        ArrayList<Tablero> tableros = b.resolver();
 
-        System.out.println(tablero);
+        for(Tablero t : tableros){
+            System.out.println(t);
+        }
+
+        System.out.println("SOLUCIONES: " + tableros.size());
     }
 }

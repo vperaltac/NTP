@@ -19,8 +19,8 @@ public class Celda {
 
     // TODO: comprobar que funciona correctamente para diagonales izq-dcha
     public static boolean conflicto(Celda c1, Celda c2){
-        if(c1.getFila() == c2.getFila() && c1.getColumna() == c2.getColumna())
+        if(c1.getFila() == c2.getFila() || c1.getColumna() == c2.getColumna())
             return true;
-        else return abs(c1.getFila() - c1.getColumna()) != abs(c2.getFila() - c2.getColumna());
+        else return abs(c1.getFila() - c2.getFila()) == abs(c1.getColumna() - c2.getColumna());
     }
 }

@@ -17,7 +17,6 @@ public class Celda {
         return columna;
     }
 
-    // TODO: comprobar que funciona correctamente para diagonales izq-dcha
     public static boolean conflicto(Celda c1, Celda c2){
         if(c1.getFila() == c2.getFila() || c1.getColumna() == c2.getColumna())
             return true;

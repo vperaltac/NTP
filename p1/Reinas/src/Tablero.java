@@ -43,17 +43,17 @@ public class Tablero {
 
     @Override
     public String toString() {
-        String salida = "";
+        StringBuilder salida = new StringBuilder();
         for(int i=0;i<dimension;i++){
             for(int j=0;j<dimension;j++){
                 if(celdaOcupada(i,j))
-                    salida += "R ";
+                    salida.append("R ");
                 else
-                    salida += "X ";
+                    salida.append("X ");
             }
-            salida += "\n";
+            salida.append("\n");
         }
 
-        return salida;
+        return salida.toString();
     }
 }

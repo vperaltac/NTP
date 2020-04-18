@@ -3,8 +3,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Tablero {
-    private int dimension;
-    private ArrayList<Celda> contenido;
+    private final int dimension;
+    private final ArrayList<Celda> contenido;
 
     public Tablero(int dimension){
         this.dimension = dimension;

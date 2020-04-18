@@ -1,4 +1,8 @@
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Buscador {
     private final int dimension;
@@ -19,21 +23,24 @@ public class Buscador {
             tableros.add(tablero);
         }
         else{
-            ArrayList<Tablero> soluciones = new ArrayList<>();
-            tableros = ubicarReina(fila-1);
+            ArrayList<Tablero> soluciones = ubicarReina(fila-1);
 
-            for (Tablero tablero : tableros) {
-                for (int j = 0; j < dimension; j++){
-                    Celda c1 = new Celda(fila, j);
-                    if (tablero.posicionSegura(c1)) {
-                        Tablero t = new Tablero(tablero);
-                        t.ponerReina(fila, j);
-                        soluciones.add(t);
-                    }
-                }
-            }
+            List<Tablero> sols = soluciones.stream()
+                    .flatMap(tablero ->
+                        IntStream.range(0,dimension).boxed().map(col ->{
+                            Celda c1 = new Celda(fila, col);
 
-            tableros = soluciones;
+                            Tablero t = null;
+                            if(tablero.posicionSegura(c1)){
+                                t = new Tablero(tablero);
+                                t.ponerReina(fila,col);
+                            }
+
+                            return t;
+                        }).filter(Objects::nonNull)
+                    ).collect(Collectors.toList());
+
+            tableros.addAll(sols);
         }
 
         return tableros;

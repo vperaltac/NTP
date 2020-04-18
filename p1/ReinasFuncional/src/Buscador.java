@@ -23,7 +23,7 @@ public class Buscador {
             tableros = ubicarReina(fila-1);
 
             for (Tablero tablero : tableros) {
-                for (int j = 0; j < dimension; j++) {
+                for (int j = 0; j < dimension; j++){
                     Celda c1 = new Celda(fila, j);
                     if (tablero.posicionSegura(c1)) {
                         Tablero t = new Tablero(tablero);

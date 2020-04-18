@@ -1,8 +1,8 @@
 import static java.lang.Math.abs;
 
 public class Celda {
-    private int fila;
-    private int columna;
+    private final int fila;
+    private final int columna;
 
     Celda(int fila, int columna){
         this.fila = fila;

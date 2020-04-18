@@ -26,8 +26,8 @@ public class Buscador {
             ArrayList<Tablero> soluciones = ubicarReina(fila-1);
 
             List<Tablero> sols = soluciones.stream()
-                    .flatMap(tablero ->
-                        IntStream.range(0,dimension).boxed().map(col ->{
+                    .flatMap(tablero -> IntStream.range(0,dimension).boxed()
+                        .map(col -> {
                             Celda c1 = new Celda(fila, col);
 
                             Tablero t = null;
@@ -37,8 +37,9 @@ public class Buscador {
                             }
 
                             return t;
-                        }).filter(Objects::nonNull)
-                    ).collect(Collectors.toList());
+                        })
+                    .filter(Objects::nonNull))
+                    .collect(Collectors.toList());
 
             tableros.addAll(sols);
         }

@@ -1,8 +1,6 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Vector;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Ruta {
     private List<Ciudad> ciudades;
@@ -18,10 +16,13 @@ public class Ruta {
         this.distancia += distancia;
     }
 
+    public void agregarCiudad(Ciudad ciudad){
+        ciudades.add(ciudad);
+    }
+
     public static Ruta generarRuta(Problema problema){
         Ruta r = new Ruta();
         Vector<Vector<Double>> distancias = problema.getDistancias();
-
 
         // generar ruta aleatoria
         List<Ciudad> ciudades = problema.getCiudades();
@@ -30,14 +31,23 @@ public class Ruta {
                 .collect(Collectors.toList());
         Collections.shuffle(ciuds);
 
-        ciuds.forEach(c -> {
-            r.agregarCiudad(ciudades.get(c),distancias.get(c).get((c+1)%ciuds.size()));
-        });
+        // cálculo de distancia
+        double distancia = IntStream.range(0, ciuds.size())
+                .boxed()
+                .mapToDouble(indice -> distancias.get(ciuds.get(indice)).get(ciuds.get((indice+1)%ciuds.size())))
+                .sum();
 
+        // añadir ciudades y distancia final a ruta
+        ciuds.forEach(c -> r.agregarCiudad(ciudades.get(c)));
         r.agregarCiudad(ciudades.get(ciuds.get(0)),0.0);
+        r.setDistancia(distancia);
+
         return r;
     }
 
+    public void setDistancia(double distancia){
+        this.distancia = distancia;
+    }
 
     public double getDistancia(){
         return distancia;

@@ -8,7 +8,8 @@ public class ViajanteComercio {
         Ruta ruta = vmc.calcularRutaOptima(problema);
         System.out.println("Ruta VecinoMasCercano: " + ruta);
 
-        Ruta r = Ruta.generarRuta(problema);
-        System.out.println(r);
+        MonteCarlo mc = new MonteCarlo();
+        Ruta ruta_mc = mc.calcularRutaOptima(problema);
+        System.out.println("Ruta MonteCarlo: " + ruta_mc);
     }
 }

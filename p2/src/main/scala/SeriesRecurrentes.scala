@@ -28,14 +28,14 @@ object SeriesRecurrentes {
      * 2*Li-1 + Li-2 para Pell y Pell-Lucas
      */
     def operacion1(v1: Int, v2: Int) : Int = {
-        2*v1 + v2
+        v1 + 2*v2
     }
 
     /**
      * Li-1 + 2*Li-2 para Jabobsthal
      */
     def operacion2(v1: Int, v2: Int) : Int = {
-        v1 + 2*v2
+        2*v1 + v2
     }
 
     def main(args: Array[String]): Unit ={
@@ -47,12 +47,12 @@ object SeriesRecurrentes {
         println("Lucas de 8: " + serie(8,2,1,suma))
 
         // Serie de Pell
-        println("Pell de 8: " + serie(8,2,6,operacion1))
+        println("Pell de 8: " + serie(5,2,6,operacion1))
 
         // Serie de Pell-Lucas
         println("Pell-Lucas de 8: " + serie(8,2,2,operacion1))
 
         // Serie de Jacobsthal
-        println("Jacobsthal de 8: " + serie(8,0,1,operacion2))
+        println("Jacobsthal de 8: " + serie(5,0,1,operacion2))
     }
 }

@@ -27,8 +27,9 @@ object CambiosMoneda {
 
     def main(args: Array[String]) : Unit ={
         println("....................... Contador de posibles cambios moneda .......................")
-        println(listarCambiosPosibles(4,List(1,2)))
+        println(listarCambiosPosibles(20,List(10,5,2)))
         println(listarCambiosPosibles(5,List(1,2)))
-
+        println(listarCambiosPosibles(0,List(1,2)).head.isEmpty)
+        println(listarCambiosPosibles(1,List(2,4)))
     }
 }

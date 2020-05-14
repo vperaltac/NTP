@@ -19,4 +19,10 @@ class BusquedaSaltosTest extends FunSuite {
     test("Debería devolver -1 si no encuentra el valor"){
         assert(BusquedaSaltos.BS[Int](Array(1,2,3),4,_ < _) == Array(1,2,3).toList.indexOf(4))
     }
+
+    test("Debería funcionar con tamaños diferentes"){
+        assert(BusquedaSaltos.BS[Int](Array(1,2,3,4,6),4,_ < _) == Array(1,2,3,4,6).toList.indexOf(4))
+        assert(BusquedaSaltos.BS[Int](Array(1,2,3,4,6,10,12),10,_ < _) == Array(1,2,3,4,6,10,12).toList.indexOf(10))
+        assert(BusquedaSaltos.BS[Int](Array(1,2,3,4,6,16,41,100,200,345),100,_ < _) == Array(1,2,3,4,6,16,41,100,200,345).toList.indexOf(100))
+    }
 }

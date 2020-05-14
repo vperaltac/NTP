@@ -11,26 +11,32 @@ object BusquedaSaltos {
         @scala.annotation.tailrec
         def buscar(pos: Int): Int ={
             if(pos == coleccion.length-1) // si hemos llegado al final, la única posibilidad es el último bloque
-                busqueda_lineal(coleccion,aBuscar)
+                busqueda_lineal(coleccion.slice(pos-(tam_bloque+1),pos+1),aBuscar,pos-(tam_bloque+1))
             else if(coleccion(pos) == aBuscar)
                 pos
             else if(criterio(coleccion(pos),aBuscar))
                 buscar(pos+tam_bloque)
             else // si el valor en pos es mayor que el buscado, el buscado se encuentra en el bloque actual
-                busqueda_lineal(coleccion,aBuscar)
+                busqueda_lineal(coleccion.slice(pos-(tam_bloque+1),pos+1),aBuscar,pos-(tam_bloque+1))
         }
 
         buscar(tam_bloque-1)
     }
 
-    def busqueda_lineal[A](coleccion: Array[A], aBuscar: A): Int ={
-        coleccion.indexOf(aBuscar)
+    /**
+     * Búsqueda lineal de un valor en un Array
+     * necesita recibir la posicion inicial de la colección para devolver la posición del array original
+     */
+    def busqueda_lineal[A](coleccion: Array[A], aBuscar: A, posInicial: Int): Int ={
+        val pos = coleccion.indexOf(aBuscar)
+        if(pos == -1)
+            pos
+        else
+            pos + posInicial
     }
 
     def main(args: Array[String]): Unit ={
         println("....................... Búsqueda binaria .......................")
-        println("Deberia devolver posición 0: " + BS[Int](Array(1,2,3),1,_ < _))
-        println("Debería devolver posición 2: " + BS[Int](Array(1,2,3),3,_ < _))
-        println("Debería devolver -1 (no se encuentra): " + BS[Int](Array(1,2,3),4,_ < _))
+        println(BusquedaSaltos.BS[Int](Array(1,2,3,4,6,16,41,100,200),100,_ < _))
     }
 }

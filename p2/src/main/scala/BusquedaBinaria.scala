@@ -14,8 +14,8 @@ object BusquedaBinaria {
                 mid
             else if(criterio(coleccion(mid),aBuscar)) // aBuscar > coleccion(mid)
                 buscar(mid+1,fin)
-              else // aBuscar < coleccion(mid)
-              buscar(inicio, mid-1)
+            else // aBuscar < coleccion(mid)
+                buscar(inicio, mid-1)
         }
 
         buscar(0,coleccion.length-1)

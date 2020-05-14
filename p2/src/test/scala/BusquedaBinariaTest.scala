@@ -23,4 +23,8 @@ class BusquedaBinariaTest extends FunSuite{
         assert(BB[Int](Array(1,2,3,4,6,10,12),10,_ < _) == Array(1,2,3,4,6,10,12).toList.indexOf(10))
         assert(BB[Int](Array(1,2,3,4,6,16,41,100,200,345),100,_ < _) == Array(1,2,3,4,6,16,41,100,200,345).toList.indexOf(100))
     }
+
+    test("Debería funcionar con arrays de tipo String"){
+        assert(BB[String](Array("amor","barco","casa","dedo"),"dedo",_ < _) == 3)
+    }
 }

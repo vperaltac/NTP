@@ -10,8 +10,8 @@ object BusquedaSaltos {
 
         @scala.annotation.tailrec
         def buscar(pos: Int): Int ={
-            if(pos == coleccion.length-1) // si hemos llegado al final, la única posibilidad es el último bloque
-                busqueda_lineal(coleccion.slice(pos-(tam_bloque+1),pos+1),aBuscar,pos-(tam_bloque+1))
+            if(pos == coleccion.length-1 || pos > coleccion.length-1) // si hemos llegado al final, la única posibilidad es el último bloque
+                busqueda_lineal(coleccion.slice(pos-(tam_bloque+1),coleccion.length),aBuscar,pos-(tam_bloque+1))
             else if(coleccion(pos) == aBuscar)
                 pos
             else if(criterio(coleccion(pos),aBuscar))

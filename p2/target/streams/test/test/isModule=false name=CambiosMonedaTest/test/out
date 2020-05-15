@@ -1,0 +1,5 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mCambiosMonedaTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Si la cantidad es 0 debería devolver una lista vacía[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Si la cantidad es menor que las monedas disponibles debería devolver una lista vacía[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Debería devolver los valores correctos dada una cantidad y monedas viables[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Debería devolver los valores correctos sin importar el orden de la lista[0m[0m

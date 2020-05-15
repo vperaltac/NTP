@@ -1,0 +1,5 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mTrianguloPascalTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Valor en extremo debe ser 1 independientemente de la funcion[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- El primer valor de una fila cualquiera siempre es 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- fila 15 columna 5 debe devolver 3003[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Si se pide una posición negativa, debería devolver -1[0m[0m

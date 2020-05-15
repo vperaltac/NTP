@@ -1,0 +1,6 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mSeriesRecurrentesTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Fibonacci debe devolver correctamente los números iniciales y 1 valor calculado[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Lucas debe devolver correctamente los números iniciales y 1 valor calculado[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Pell debe devolver correctamente los números iniciales y 1 valor calculado[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Pell-Lucas debe devolver correctamente los números iniciales y 1 valor calculado[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Jacobsthal debe devolver correctamente los números iniciales y 1 valor calculado[0m[0m

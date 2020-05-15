@@ -1,7 +1,0 @@
-[0m[[0m[0minfo[0m] [0m[0m[32mBusquedaBinariaTest:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Debería devolver -1 si el array está vacío[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Debería devolver posición 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Debería devolver posición 2[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Debería devolver -1 si no encuentra el valor[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Debería funcionar con tamaños diferentes[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Debería funcionar con arrays de tipo String[0m[0m

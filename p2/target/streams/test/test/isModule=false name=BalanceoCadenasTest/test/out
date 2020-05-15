@@ -1,9 +1,0 @@
-[0m[[0m[0minfo[0m] [0m[0m[32mBalanceoCadenasTest:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- chequear balance '(if (zero? x) max (/ 1 x))' esta balanceada[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- chequear balance 'Te lo dije ...' esta balanceada[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- chequear balance ':-)' no esta balanceada[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- chequear balance: no basta con contar sin mas[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- (if (a > b) (b/a) else (a/(b*b)))[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- (ccc(ccc)cc((ccc(c))))[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- (if (a > b) b/a) else (a/(b*b)))[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- ())()())[0m[0m

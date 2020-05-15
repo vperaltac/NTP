@@ -19,7 +19,8 @@ object BusquedaBenchmark extends Bench.OfflineRegressionReport {
     } yield 0 until size
 
     // se define la funcion a usar para ordenacion
-    def ordenar(a:Int, b:Int): Boolean = a > b;
+    // función genérica para cualquier tipo de dato "ordenable"
+    def ordenar[T](a:T, b:T)(implicit ord: Ordering[T]): Boolean = ord.gt(a, b)
 
     // definicion de la prueba a realizar
     performance of "Busqueda" config(
@@ -29,7 +30,7 @@ object BusquedaBenchmark extends Bench.OfflineRegressionReport {
         exec.independentSamples -> 10
     ) in {
         // se define que se va a medir
-        measure method "busqueda binaria" in {
+        measure method "busqueda en Array[Int]" in {
             // primer metodo a probar: usando el generador ranges se
             // obtiene lista de enteros. Se indica que la curva del
             // grafico a generar se denominara Busqueda binaria
@@ -47,6 +48,26 @@ object BusquedaBenchmark extends Bench.OfflineRegressionReport {
                 r => {
                     BusquedaSaltos.BS[Int](r.toArray, r(10), ordenar)
                 }
+            }
+        }
+
+        measure method "busqueda en Array[String]" in {
+            using(ranges) curve "Busqueda binaria" in {
+                r => BusquedaBinaria.BB[String](r.map(_.toString).toArray, r(10).toString, ordenar)
+            }
+
+            using(ranges) curve "Busqueda saltos" in {
+                r => BusquedaSaltos.BS[String](r.map(_.toString).toArray, r(10).toString, ordenar)
+            }
+        }
+
+        measure method "busqueda en Array[Double]" in {
+            using(ranges) curve "Busqueda binaria" in {
+                r => BusquedaBinaria.BB[Double](r.map(_.toDouble).toArray, r(10).toDouble, ordenar)
+            }
+
+            using(ranges) curve "Busqueda saltos" in {
+                r => BusquedaSaltos.BS[Double](r.map(_.toDouble).toArray, r(10).toDouble, ordenar)
             }
         }
     }

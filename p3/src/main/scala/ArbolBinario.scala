@@ -1,8 +1,15 @@
+/**
+ * Companion para id de nodos
+ * Permite que cada nodo tenga un id único
+ */
 object ArbolBinario{
     private var cont = 0
     private def id = {cont += 1; cont}
 }
 
+/**
+ * Todos los nodos del proyecto heredan de este trait ArbolBinario
+ */
 trait ArbolBinario{
     val id: Int = ArbolBinario.id
 

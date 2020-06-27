@@ -14,7 +14,10 @@ object Main extends App{
         x*2
     }
 
-    root.operacionHojas(mult2)
-    println(root.sumarHojas())
-    println(root.tamArbol())
+    //root.operacionHojas(mult2)
+    //println(root.sumarHojas())
+    //println(root.tamArbol())
+
+    println(root.preorden())
+    println(root.postorden())
 }

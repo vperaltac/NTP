@@ -1,11 +1,7 @@
 case class NodoHoja(var valor: Double) extends ArbolBinario {
-    override def recorridoAnchura(): Unit = {
+    override def preorden(): List[Any] = List(valor)
 
-    }
-
-    override def recorridoProfundidad(): Unit = {
-
-    }
+    override def postorden(): List[Any] = List(valor)
 
     override def tamArbol(): Int = 1
 

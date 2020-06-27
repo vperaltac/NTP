@@ -6,14 +6,14 @@ case class NodoHoja(var valor: Double) extends ArbolBinario {
      * Cómo es un nodo hoja, devuelve una lista con 1 sólo valor
      * @return Lista con los valores del arbol de tipo Any (puede ser Int y/o Double)
      */
-    override def preorden(): List[Any] = List(valor)
+    override def preorden: List[Any] = List(valor)
 
     /**
      * Devuelve una lista representando el recorrido en postorden del arbol
      * Cómo es un nodo hoja, devuelve una lista con 1 sólo valor
      * @return Lista con los valores del arbol de tipo Any (puede ser Int y/o Double)
      */
-    override def postorden(): List[Any] = List(valor)
+    override def postorden: List[Any] = List(valor)
 
     /**
      * Devuelve una lista de nodos representando el recorrido en postorden
@@ -21,25 +21,25 @@ case class NodoHoja(var valor: Double) extends ArbolBinario {
      * Cómo es un nodo hoja, devuelve una lista con 1 sólo valor
      * @return Lista con los nodos del arbol de tipo ArbolBinario
      */
-    override def nodosPostOrden(): List[ArbolBinario] = List(this)
+    override def nodosPostOrden: List[ArbolBinario] = List(this)
 
     /**
      * Calcula el número de hojas del árbol
      * @return número de hojas
      */
-    override def numHojas(): Int = 1
+    override def numHojas: Int = 1
 
     /**
      * Calcula el número de nodos internos del árbol
      * @return número de nodos internos
      */
-    override def numNodosInternos(): Int = 0
+    override def numNodosInternos: Int = 0
 
     /**
      * Calcula la suma de todas las hojas del árbol
      * @return suma de las hojas (Double)
      */
-    override def sumarHojas(): Double = valor
+    override def sumarHojas: Double = valor
 
     /**
      * Permite aplicar una función cualquiera a todas las hojas del arbol

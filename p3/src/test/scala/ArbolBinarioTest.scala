@@ -26,23 +26,23 @@ class ArbolBinarioTest extends FunSuite{
     }
 
     test("debe poder calcular el número de hojas"){
-        assert(root.numHojas() == 6);
+        assert(root.numHojas == 6);
     }
 
     test("debe poder calcular el número de nodos internos"){
-        assert(root.numNodosInternos() == 5)
+        assert(root.numNodosInternos == 5)
     }
 
     test("debe poder sumar todas los valores en las hojas del arbol"){
-        assert(root.sumarHojas() == 244.4)
+        assert(root.sumarHojas == 244.4)
     }
 
     test("se debe poder realizar un recorrido en preorden"){
-        assert(root.preorden() == List(root,a,c,g,h,d,b,e,f,i,j).map(_.getValor))
+        assert(root.preorden == List(root,a,c,g,h,d,b,e,f,i,j).map(_.getValor))
     }
 
     test("se debe poder realizar un recorrido en postorden"){
-        assert(root.postorden() == List(g,h,c,d,a,e,i,j,f,b,root).map(_.getValor))
+        assert(root.postorden == List(g,h,c,d,a,e,i,j,f,b,root).map(_.getValor))
     }
 
     test("se debe poder realizar un recorrido en TopDown"){
@@ -51,6 +51,6 @@ class ArbolBinarioTest extends FunSuite{
 
     test("se debe poder realizar una operación sobre las hojas de un arbol"){
         root.operacionHojas(x => x*2)
-        assert(root.sumarHojas() == 244.4*2)
+        assert(root.sumarHojas == 244.4*2)
     }
 }

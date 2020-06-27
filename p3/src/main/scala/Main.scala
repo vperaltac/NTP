@@ -18,13 +18,13 @@ object Main extends App{
     // Profundidad 0
     val root: NodoRaiz = NodoRaiz(12,a,b)
 
-    println("Número de hojas: " + root.numHojas())
-    println("Número de nodos internos: " + root.numNodosInternos())
-    println("Recorrido preorden: " + root.preorden())
-    println("Recorrido postorden: " + root.postorden())
+    println("Número de hojas: " + root.numHojas)
+    println("Número de nodos internos: " + root.numNodosInternos)
+    println("Recorrido preorden: " + root.preorden)
+    println("Recorrido postorden: " + root.postorden)
     println("Recorrido topdown: " + root.topDown)
 
-    println("Suma de hojas: " + root.sumarHojas())
+    println("Suma de hojas: " + root.sumarHojas)
     root.operacionHojas(x => x*2)
-    println("Suma de hojas tras multiplicar por 2: " + root.sumarHojas())
+    println("Suma de hojas tras multiplicar por 2: " + root.sumarHojas)
 }

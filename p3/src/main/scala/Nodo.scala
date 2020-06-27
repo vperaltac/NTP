@@ -7,8 +7,12 @@ case class Nodo(var valor: Int, izq: ArbolBinario, dcha: ArbolBinario) extends A
         izq.postorden() ::: dcha.postorden() ::: List(valor)
     }
 
-    override def tamArbol(): Int = {
-        izq.tamArbol() + dcha.tamArbol() + 1
+    override def numHojas(): Int = {
+        izq.numHojas() + dcha.numHojas()
+    }
+
+    override def numNodosInternos(): Int = {
+        izq.numNodosInternos() + dcha.numNodosInternos() + 1
     }
 
     override def sumarHojas(): Double = {

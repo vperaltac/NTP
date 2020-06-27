@@ -18,6 +18,8 @@ object Main extends App{
     //println(root.sumarHojas())
     //println(root.tamArbol())
 
-    println(root.preorden())
-    println(root.postorden())
+    println("Recorrido preorden: " + root.preorden())
+    println("Recorrido postorden: " + root.postorden())
+    println("Número de hojas: " + root.numHojas())
+    println("Número de nodos internos: " + root.numNodosInternos())
 }

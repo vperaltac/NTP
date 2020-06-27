@@ -76,13 +76,10 @@ case class NodoRaiz(var valor: Int, izq: ArbolBinario, dcha: ArbolBinario) exten
         var datos = List.empty[Any]
         val max = nodos.map(_.getProfundidad).max
 
-        var i = 0
-        while(i <= max){
+        for (i <- 0 to max){
             nodos.foreach(n => {
                 if(n.getProfundidad == i) datos = datos :+ n.getValor
             })
-
-            i = i+1
         }
 
         datos

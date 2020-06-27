@@ -1,15 +1,21 @@
-case class NodoHoja(var valor: Double, var izq: ArbolBinario, var dcha: ArbolBinario) extends ArbolBinario {
-    override def add(valor: Either[Int, Double]): ArbolBinario = ???
+case class NodoHoja(var valor: Double) extends ArbolBinario {
+    override def recorridoAnchura(): Unit = {
 
-    override def buscar(valor: Either[Int, Double]): Boolean = ???
+    }
 
-    override def eliminar(valor: Either[Int, Double]): ArbolBinario = ???
+    override def recorridoProfundidad(): Unit = {
 
-    override def recorridoAnchura(): List[Any] = ???
+    }
 
-    override def recorridoProfundidad(): List[Any] = ???
+    override def tamArbol(): Int = 1
 
-    override def operacionHojas(): Unit = ???
+    override def sumarHojas(): Double = valor
 
-    override def mergeArboles(arbol: ArbolBinario): ArbolBinario = ???
+    override def operacionHojas(op: Double => Double): Unit = {
+        valor = op(valor)
+    }
+
+    override def mergeArboles(arbol: ArbolBinario): ArbolBinario = {
+        this
+    }
 }

@@ -1,5 +1,5 @@
-case class Nodo(var valor: Int, izq: ArbolBinario, dcha: ArbolBinario) extends ArbolBinario{
-    var profundidad: Int = 0
+case class NodoRaiz(var valor: Int, izq: ArbolBinario, dcha: ArbolBinario) extends ArbolBinario{
+    val profundidad = 0
 
     override def preorden(): List[Any] = {
         List(valor) ::: izq.preorden() ::: dcha.preorden()
@@ -38,9 +38,27 @@ case class Nodo(var valor: Int, izq: ArbolBinario, dcha: ArbolBinario) extends A
         valor.toString
     }
 
-    override def asignarProfundidad(prof: Int): Unit = {
-        profundidad = prof+1
+    def topDown: List[Any] = {
+        // dar valores de profundidad a todos los nodos respecto de este nodo raiz
+        asignarProfundidad(0)
 
+        val nodos: List[ArbolBinario] = nodosPostOrden()
+        var datos = List.empty[Any]
+        val max = nodos.map(_.getProfundidad).max
+
+        var i = 0
+        while(i <= max){
+            nodos.foreach(n => {
+                if(n.getProfundidad == i) datos = datos :+ n.getValor
+            })
+
+            i = i+1
+        }
+
+        datos
+    }
+
+    override def asignarProfundidad(prof: Int): Unit = {
         izq.asignarProfundidad(profundidad)
         dcha.asignarProfundidad(profundidad)
     }

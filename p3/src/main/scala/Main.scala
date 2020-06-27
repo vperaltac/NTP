@@ -1,44 +1,30 @@
 object Main extends App{
-    val n = NodoHoja(43)
-    val m = NodoHoja(54)
-    val A = Nodo(10,n,m)
+    // Profundidad 3
+    val g: NodoHoja = NodoHoja(43)
+    val h: NodoHoja = NodoHoja(54)
+    val i: NodoHoja = NodoHoja(65)
+    val j: NodoHoja = NodoHoja(73.4)
 
-    val B = NodoHoja(5)
-    val C = NodoHoja(4)
+    // Profundidad 2
+    val c: Nodo = Nodo(10,g,h)
+    val d: NodoHoja = NodoHoja(5)
+    val e: NodoHoja = NodoHoja(4)
+    val f: Nodo = Nodo(3,i,j)
 
-    val j = NodoHoja(65)
-    val k = NodoHoja(73.4)
-    val D = Nodo(3,j,k)
+    // Profundidad 1
+    val a: Nodo = Nodo(7,c,d)
+    val b: Nodo = Nodo(6,e,f)
 
-    val AB = Nodo(7,A,B)
-    val CD = Nodo(6,C,D)
-    val root = NodoRaiz(12,AB,CD)
+    // Profundidad 0
+    val root: NodoRaiz = NodoRaiz(12,a,b)
 
-    val E = NodoHoja(20)
-    val F = NodoHoja(21)
-    val G = NodoHoja(22)
-    val H = NodoHoja(23)
-
-    val EF = Nodo(24,E,F)
-    val GH = Nodo(25,G,H)
-    val root2 = NodoRaiz(26,EF,GH)
-
-    println(root.sumarHojas())
-
-    def mult2(x: Double) = {
-        x*2
-    }
-
-    //root.operacionHojas(mult2)
-    //println(root.sumarHojas())
-    //println(root.tamArbol())
-
-    println("Recorrido preorden: " + root.preorden())
-    println("Recorrido postorden: " + root.postorden())
     println("Número de hojas: " + root.numHojas())
     println("Número de nodos internos: " + root.numNodosInternos())
+    println("Recorrido preorden: " + root.preorden())
+    println("Recorrido postorden: " + root.postorden())
+    println("Recorrido topdown: " + root.topDown)
 
-    val nuevo = root.mergeArboles(root2)
-    println("preorden arboles combinados: " + nuevo.preorden())
-    println(root.topDown)
+    println("Suma de hojas: " + root.sumarHojas())
+    root.operacionHojas(x => x*2)
+    println("Suma de hojas tras multiplicar por 2: " + root.sumarHojas())
 }

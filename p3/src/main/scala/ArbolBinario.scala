@@ -14,21 +14,18 @@ trait ArbolBinario{
     val id: Int = ArbolBinario.id
 
     // Recorridos de arboles binarios
-    def preorden(): List[Any]
-    def postorden(): List[Any]
+    def preorden: List[Any]
+    def postorden: List[Any]
 
-    def nodosPostOrden(): List[ArbolBinario]
+    def nodosPostOrden: List[ArbolBinario]
 
     // cálculos para tamaño del arbol
-    def numHojas(): Int
-    def numNodosInternos(): Int
+    def numHojas: Int
+    def numNodosInternos: Int
 
     // operaciones con hojas (double)
-    def sumarHojas(): Double
+    def sumarHojas: Double
     def operacionHojas(op: Double => Double)
-
-    // operaciones con árboles
-    def mergeArboles(arbol: ArbolBinario) : ArbolBinario
 
     // getters
     def getValor: Any

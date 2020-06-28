@@ -11,16 +11,16 @@ case class Nodo(var valor: Int, izq: ArbolBinario, dcha: ArbolBinario) extends A
      * Devuelve una lista representando el recorrido en preorden del arbol
      * @return Lista con los valores del arbol de tipo Any (puede ser Int y/o Double)
      */
-    override def preorden(): List[Any] = {
-        List(valor) ::: izq.preorden() ::: dcha.preorden()
+    override def preorden: List[Any] = {
+        List(valor) ::: izq.preorden ::: dcha.preorden
     }
 
     /**
      * Devuelve una lista representando el recorrido en postorden del arbol
      * @return Lista con los valores del arbol de tipo Any (puede ser Int y/o Double)
      */
-    override def postorden(): List[Any] = {
-        izq.postorden() ::: dcha.postorden() ::: List(valor)
+    override def postorden: List[Any] = {
+        izq.postorden ::: dcha.postorden ::: List(valor)
     }
 
     /**
@@ -28,32 +28,32 @@ case class Nodo(var valor: Int, izq: ArbolBinario, dcha: ArbolBinario) extends A
      * Éste método se utiliza para generar el recorrido TopDown
      * @return Lista con los nodos del arbol de tipo ArbolBinario
      */
-    override def nodosPostOrden(): List[ArbolBinario] = {
-        izq.nodosPostOrden() ::: dcha.nodosPostOrden() ::: List(this)
+    override def nodosPostOrden: List[ArbolBinario] = {
+        izq.nodosPostOrden ::: dcha.nodosPostOrden ::: List(this)
     }
 
     /**
      * Calcula el número de hojas del árbol
      * @return número de hojas
      */
-    override def numHojas(): Int = {
-        izq.numHojas() + dcha.numHojas()
+    override def numHojas: Int = {
+        izq.numHojas + dcha.numHojas
     }
 
     /**
      * Calcula el número de nodos internos del árbol
      * @return número de nodos internos
      */
-    override def numNodosInternos(): Int = {
-        izq.numNodosInternos() + dcha.numNodosInternos() + 1
+    override def numNodosInternos: Int = {
+        izq.numNodosInternos + dcha.numNodosInternos + 1
     }
 
     /**
      * Calcula la suma de todas las hojas del árbol
      * @return suma de las hojas (Double)
      */
-    override def sumarHojas(): Double = {
-        izq.sumarHojas() + dcha.sumarHojas()
+    override def sumarHojas: Double = {
+        izq.sumarHojas + dcha.sumarHojas
     }
 
     /**
@@ -63,15 +63,6 @@ case class Nodo(var valor: Int, izq: ArbolBinario, dcha: ArbolBinario) extends A
     override def operacionHojas(op: Double => Double): Unit = {
         izq.operacionHojas(op)
         dcha.operacionHojas(op)
-    }
-
-    /**
-     * Fusiona dos árboles binarios
-     * @param arbol Arbol a fusionar
-     * @return Arbol fusionado
-     */
-    override def mergeArboles(arbol: ArbolBinario): ArbolBinario = {
-        Nodo(0,this,arbol)
     }
 
     /**

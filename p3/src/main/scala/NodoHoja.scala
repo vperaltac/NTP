@@ -48,13 +48,6 @@ case class NodoHoja(var valor: Double) extends ArbolBinario {
     override def operacionHojas(op: Double => Double): Unit = {valor = op(valor)}
 
     /**
-     * Fusiona dos árboles binarios
-     * @param arbol Arbol a fusionar
-     * @return Arbol fusionado
-     */
-    override def mergeArboles(arbol: ArbolBinario): ArbolBinario = null
-
-    /**
      * Asigna la profundidad del nodo actual
      * Este método siempre debe ser llamado desde un NodoRaiz
      * @param prof profundidad anterior

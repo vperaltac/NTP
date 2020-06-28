@@ -27,9 +27,6 @@ trait ArbolBinario{
     def sumarHojas: Double
     def operacionHojas(op: Double => Double)
 
-    // operaciones con árboles
-    def mergeArboles(arbol: ArbolBinario) : ArbolBinario
-
     // getters
     def getValor: Any
     def getNodoIzquierda: ArbolBinario

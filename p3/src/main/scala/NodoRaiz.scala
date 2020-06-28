@@ -64,8 +64,10 @@ case class NodoRaiz(var valor: Int, izq: ArbolBinario, dcha: ArbolBinario) exten
      * @param arbol Arbol a fusionar
      * @return Arbol fusionado
      */
-    override def mergeArboles(arbol: ArbolBinario): ArbolBinario = {
-        Nodo(0,this,arbol)
+    def mergeArboles(arbol: ArbolBinario): ArbolBinario = {
+        val nuevo_hijo_izq = Nodo(valor,izq,dcha)
+        val nuevo_hijo_dcha = Nodo(arbol.getValor.asInstanceOf[Int],arbol.getNodoIzquierda,arbol.getNodoDerecha)
+        NodoRaiz(0,nuevo_hijo_izq,nuevo_hijo_dcha)
     }
 
     def topDown: List[Any] = {

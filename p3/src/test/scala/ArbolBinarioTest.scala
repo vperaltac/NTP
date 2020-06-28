@@ -53,4 +53,13 @@ class ArbolBinarioTest extends FunSuite{
         root.operacionHojas(x => x*2)
         assert(root.sumarHojas == 244.4*2)
     }
+
+    test("se debe poder combinar 2 arboles binarios"){
+        val cc: NodoHoja = NodoHoja(103)
+        val bb: NodoHoja = NodoHoja(204)
+        val aa: NodoRaiz = NodoRaiz(1,bb,cc)
+
+        val nuevo_arbol = root.mergeArboles(aa)
+        assert(nuevo_arbol.preorden == List(nuevo_arbol,root,a,c,g,h,d,b,e,f,i,j,aa,bb,cc).map(_.getValor))
+    }
 }

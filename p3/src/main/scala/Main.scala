@@ -18,13 +18,22 @@ object Main extends App{
     // Profundidad 0
     val root: NodoRaiz = NodoRaiz(12,a,b)
 
+    // Segundo arbol para combinar con arbol anterior
+    val cc: NodoHoja = NodoHoja(103)
+    val bb: NodoHoja = NodoHoja(204)
+    val aa: NodoRaiz = NodoRaiz(1,bb,cc)
+
     println("Número de hojas: " + root.numHojas)
     println("Número de nodos internos: " + root.numNodosInternos)
     println("Recorrido preorden: " + root.preorden)
     println("Recorrido postorden: " + root.postorden)
     println("Recorrido topdown: " + root.topDown)
 
+    val nuevo_arbol = root.mergeArboles(aa)
+    println("Recorrido preorden de arboles combinados: " + nuevo_arbol.preorden)
+
     println("Suma de hojas: " + root.sumarHojas)
     root.operacionHojas(x => x*2)
     println("Suma de hojas tras multiplicar por 2: " + root.sumarHojas)
+
 }

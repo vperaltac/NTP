@@ -66,15 +66,6 @@ case class Nodo(var valor: Int, izq: ArbolBinario, dcha: ArbolBinario) extends A
     }
 
     /**
-     * Fusiona dos árboles binarios
-     * @param arbol Arbol a fusionar
-     * @return Arbol fusionado
-     */
-    override def mergeArboles(arbol: ArbolBinario): ArbolBinario = {
-        Nodo(0,this,arbol)
-    }
-
-    /**
      * Asigna la profundidad del nodo actual
      * Este método siempre debe ser llamado desde un NodoRaiz
      * @param prof profundidad anterior
